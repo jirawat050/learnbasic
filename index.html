@@ -1,0 +1,238 @@
+
+
+<html lang="en">
+<head>
+<title>ระบบคำนวณค่าพัสดุ ( Kerry + ไปรษณีย์ )</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width">
+<meta name="csrf-token" content="1kF3eflA9z5eqCBlrJi6aWOE723tezRrJxnWGp7R">
+<link rel="shortcut icon" href="/images/favicon.ico">
+
+
+<!-- Custom CSS -->
+
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body>
+    <div class="navbar-more-overlay"></div>
+    <nav class="navbar navbar-inverse navbar-fixed-top animate">
+       
+    </nav>
+
+    <section class="container-fluid">
+        
+<div class="col-xs-18 col-sm-12 topic">
+<h4>ค่าพัสดุ (ไปรษณีย์ )</h4>
+</div>
+<div class="col-md-6 boxa e1">
+<form id="apiform">
+<br>
+<div class='row'>
+    <div class="col-md-12">
+    <div class="form-group">
+    <div class="col-md-2">
+    <label class="control-label" for="w">กว้าง cm.</label>
+    <input id="w" name="w" type="number" placeholder="Width" class="form-control input-md">
+    <p></p>
+    </div>
+
+    <div class="col-md-2">
+    <label class="control-label" for="ส">ยาว cm.</label>
+    <input id="l" name="l" type="number" placeholder="Length" class="form-control input-md">
+    <p></p>
+    </div>
+
+    <div class="col-md-2">
+    <label class="control-label" for="h">สูง cm.</label>
+    <input id="h" name="h" type="number" placeholder="Height" class="form-control input-md">
+    <p></p>
+    </div>
+
+    <div class="col-md-2">
+    <label class="control-label" for="weight">น้ำหนัก kg.</label>
+    <input id="weight" name="weight" type="number" placeholder="Weight" class="form-control input-md">
+    </div>
+
+    <div class="col-md-2">
+    <label class="control-label" for="unit_box">จำนวนกล่อง</label>
+    <input id="unit_box" name="unit_box" type="number" placeholder="Box unit" class="form-control input-md">
+    </div>
+
+<!--     <div class="col-md-2">
+    <label class="control-label">&nbsp;</label>
+    <button type="button" class="btn btn-default form-control addrow"><i class="fa fa-plus"></i> เพิ่มแถว</button>
+    </div> -->
+
+    </div>
+    </div>
+</div>
+
+<div class='row postcode'>
+<div class="col-md-12">
+<div class="form-group">
+    <div class="col-md-2">
+    <label class="control-label">ไปรษณีย์</label>
+    <input type="number" id="postcode" name="postcode" class="form-control" placeholder="รหัสปลายทาง" />
+    </div>
+
+    <div class="col-md-2">
+    <label class="control-label">&nbsp;</label>
+    <div class="zipcode-btn">
+    
+    </div>
+    <p></p>
+    </div>
+
+    <div class="col-md-1">
+    <label class="control-label">&nbsp;</label>
+    </div>
+
+    <div class="col-md-7">
+    <label class="control-label">&nbsp;</label>
+    <div class="address"></div>
+    </div>
+
+</div>
+</div>
+</div>
+
+<div class='row'>
+    <div class="col-md-12">
+    <div class="form-group">
+    <label class="control-label" for="apisubmit"></label>
+    <div class="col-md-12 control"><br>
+    <button type="button" id="apisubmit" name="apisubmit" class="btn btn-success"> <i class="fa fa-undo" aria-hidden="true" id="iconbtn"></i> คำนวณ </button>
+    <button type="reset" id="reset" name="reset" class="btn btn-default"> ล้างข้อมูล </button>
+    </div>
+    </div>
+    </div>
+</div>
+
+</form>
+
+</div>
+
+<div class="col-md-6 e2" style="display: none;">
+
+
+
+<div class="col-sm-4 col-md-4 boxd callback">
+<p><i class="fa fa-arrow-up"></i> ไปรษณีย์ (josoco)</p>
+<div id="backto"></div>
+</div>
+
+<!-- <div class="col-sm-3 col-md-3 boxe callback">
+<p><i class="fa fa-arrow-up"></i> ศูนย์อื่น ๆ</p>
+<div id="backto4"></div>
+</div> -->
+
+</div>
+
+
+<div class="col-xs-18 col-sm-12">
+<div class="col-md-6 e3">
+
+</div>
+<div class="col-md-6 e4" style="display: none;">
+<p class="comment">
+สินค้าบรรจุกล่องบริษัท
+จึงไม่ต้องเสียค่า Packaging
+ของ Kerry
+</p>
+</div>
+</div>
+
+<!-- <div class="col-sm-3 col-md-3 boxe callback">
+<p><i class="fa fa-arrow-up"></i> ศูนย์อื่น ๆ</p>
+<div id="backto4"></div>
+</div> -->
+
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap3-dialog/1.34.7/js/bootstrap-dialog.min.js"></script>
+<script src="https://api.josoco.com/app.js"></script>
+<script>
+ $(document).ready(function(){
+    $("#apisubmit").click(function(){
+     var w=$("#w").val();
+     var l=$("#l").val();
+     var h=$("#h").val();
+     var weight=$("#weight").val();
+      var unit_box=$("#unit_box").val();
+        var postcode=$("#postcode").val();
+    var callbackTo = $("#backto");
+    var output;
+    var result;
+    var comment = $('.comment strong');
+    /* ข้อมูล รายการสิ้นค้าทั้งหมดของ Order นั้น ๆ จัดเรียงเป็น Array*/
+    var obj  = {
+                      key:"4c3373935ebb31bd73ad8779daff5d2e",
+                      provider:"4",
+                      zipcode:postcode,
+                      items : [
+                                  {"sku":"sku001","st":"1","w":w, "l":l, "h":h, "weight":weight, "box":unit_box},
+                                  {"sku":"sku002","w":w, "l":l, "h":h, "weight":weight, "box":unit_box},
+                                  {"sku":"sku003","w":w, "l":l, "h":h, "weight":weight, "box":unit_box}
+                                ]
+                    }
+
+      var newobj = {shipping:JSON.stringify(obj)};
+      callbackTo.html("<br><i class='fa fa-refresh fa-spin'></i> <span>Loading...</span>");
+
+      $.ajax({
+        url: 'https://api.josoco.com/post',
+        type: 'POST',
+        data: newobj,
+        dataType: 'json',
+        cache: false,
+        crossDomain: true,
+        timeout: 8000,
+        }).done(function(response){
+            output = JSON.stringify(response, null, '\t');
+             let test = response.shipping.items;
+             result = test.sku002.price;
+    
+            
+           
+            if(result === undefined){
+              result = "<font color='red'><strong>ERROR : </strong></font>ไม่พบข้อมูล กรุณาตรวจสอบจากข้อความใน msg";}
+              else{
+                result = "<font color='green'>ค่าจัดส่ง : "+result+" บาท</font>";
+              }
+            
+             
+
+            $("#backto").html(result);
+            
+
+            comment.html('<div class="alert alert-success"><strong>Success : </strong>การส่งค่าสำเร็จ.</div>');
+        }).fail(function(error){
+           if(error.statusText === 'timeout')
+            {
+                $("#backto").html("<br><font color='red'>Server timeout</font>");
+            }else{
+                $("#backto").html("<br>"+error.statusText);
+            }
+
+            comment.html('<div class="alert alert-danger"><strong>Success : </strong>การส่งค่าล้มเหลว.</div>');
+      });
+      $('body, html').animate({
+          scrollTop: $('.e2').offset().top - 70
+      }, 'slow');
+
+    });
+    });
+</script>
+
+    
+</body>
+</html>
