@@ -1,0 +1,4 @@
+function total_page(per_page,count_data){
+   var total_page = math.ceil(count_data/per_page);
+   return total_page
+}
